@@ -1,5 +1,5 @@
 import json
-import datetime
+from datetime import datetime
 
 
 def open_file__extract_info():
@@ -23,8 +23,26 @@ def open_file__extract_info():
     return temp
 
 def reformate_date(temp):
+    """
+    Функция изменяет формат записи даты и времени для дальнейшей сортировки.
+
+    :param temp: массив данных для форматирования.
+    :return: отформатированный массив.
+    """
 
     for line in temp:
         line['date'] = line['date'][:10] + ' ' + line['date'][11:]
 
     return temp
+
+def sort_by_date_time(temp):
+    """
+    Функция сортирует массив по дате и времени.
+
+    :param temp: массив для сортировки.
+    :return: массив после сортировки.
+    """
+
+    result = sorted(temp, reverse=True, key=lambda x: datetime.strptime(x['date'], "%Y-%m-%d %H:%M:%S.%f"))
+
+    return result

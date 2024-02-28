@@ -1,4 +1,5 @@
 import json
+import datetime
 
 
 def open_file__extract_info():
@@ -14,12 +15,16 @@ def open_file__extract_info():
         temp = json.load(file)
 
         for line in temp:
-            if "state" not in line:
+            if "state" not in line or line['state'] == 'CANCELED':
                 temp.remove(line)
             else:
-                if line["state"] == "CANCELED":
-                    temp.remove(line)
-                else:
-                    continue
+                continue
+
+    return temp
+
+def reformate_date(temp):
+
+    for line in temp:
+        line['date'] = line['date'][:10] + ' ' + line['date'][11:]
 
     return temp

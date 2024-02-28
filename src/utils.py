@@ -11,16 +11,16 @@ def open_file__extract_info():
     :return: Возвращает скорректированный массив данных.
     """
 
-    with open("operations.json", 'r') as file:
+    with open("operations.json", 'r', encoding='utf-8') as file:
         temp = json.load(file)
-
+        lst = []
         for line in temp:
             if "state" not in line or line['state'] == 'CANCELED':
-                temp.remove(line)
-            else:
                 continue
+            else:
+                lst.append(line)
 
-    return temp
+    return lst
 
 def reformate_date(temp):
     """

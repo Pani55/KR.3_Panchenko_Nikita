@@ -24,4 +24,4 @@ def test_print_result():
     assert print_result([{"state": "EXECUTED", "date": "2019-07-12T20:41:47.882230",
                           "operationAmount": {"amount": "51463.70", "currency": {"name": "USD", "code": "USD"}},
                           "description": "Перевод организации","from": "Счет 48894435694657014368",
-                          "to": "Счет 38976430693692818358"}]) == None
+                          "to": "Счет 38976430693692818358"}]) is None

@@ -22,6 +22,7 @@ def open_file__extract_info():
 
     return lst
 
+
 def reformate_date(temp):
     """
     Функция изменяет формат записи даты и времени для дальнейшей сортировки.
@@ -34,6 +35,7 @@ def reformate_date(temp):
         line['date'] = line['date'][:10] + ' ' + line['date'][11:]
 
     return temp
+
 
 def hide_from(temp):
     """
@@ -54,6 +56,7 @@ def hide_from(temp):
 
     return temp
 
+
 def hide_to(temp):
     """
     Функция маскирует получателя
@@ -70,6 +73,7 @@ def hide_to(temp):
 
     return temp
 
+
 def reverse_date(temp):
     """
     Функция переворачивают дату
@@ -83,6 +87,7 @@ def reverse_date(temp):
 
     return temp
 
+
 def sort_by_date_time(temp):
     """
     Функция сортирует массив по дате и времени.
@@ -94,6 +99,7 @@ def sort_by_date_time(temp):
     result = sorted(temp, reverse=True, key=lambda x: datetime.strptime(x['date'], "%Y-%m-%d %H:%M:%S.%f"))
 
     return result
+
 
 def print_result(temp):
     """

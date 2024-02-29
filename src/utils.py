@@ -48,7 +48,7 @@ def hide_from(temp):
             if 'Счет' in line['from']:
                 line['from'] = 'Счет **' + line['from'][-4:]
             else:
-                line['from'] = line['from'][:-12] + ' ' + line['from'][-13:-11] + '** **** ' + line['from'][-4:]
+                line['from'] = line['from'][:-12] + ' ' + line['from'][-12:-10] + '** **** ' + line['from'][-4:]
         else:
             continue
 
@@ -66,7 +66,7 @@ def hide_to(temp):
         if 'Счет' in line['to']:
             line['to'] = 'Счет **' + line['to'][-4:]
         else:
-            line['to'] = line['to'][:-12] + ' ' + line['to'][-13:-11] + '** **** ' + line['to'][-4:]
+            line['to'] = line['to'][:-12] + ' ' + line['to'][-12:-10] + '** **** ' + line['to'][-4:]
 
     return temp
 
